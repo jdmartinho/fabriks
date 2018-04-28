@@ -39,14 +39,9 @@ public class FabricController {
 
     @RequestMapping(value = "fabrics/{id}", method = RequestMethod.DELETE)
     public Fabric delete(@PathVariable Long id) {
-        try{
-            Fabric existingFabric = _fabricRepository.getOne(id);
-            _fabricRepository.delete(existingFabric);
-            return existingFabric;
-        } catch (Exception ex){
-            System.out.println("WWWWWWWWWWWWWWWWWWEEEEEEEEEEEEEEEEEEEEE CAAAAAAAAAAAAARUGSFSDDGHKYKH");
-            return null;
-        }
+        Fabric existingFabric = _fabricRepository.getOne(id);
+        _fabricRepository.delete(existingFabric);
+        return existingFabric;
     }
 }
 

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "FABRIC")
 @Getter @Setter @NoArgsConstructor
-@Serialization
 public class Fabric {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
