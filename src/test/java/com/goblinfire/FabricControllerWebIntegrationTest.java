@@ -63,7 +63,7 @@ public class FabricControllerWebIntegrationTest {
     }
 
     @Test
-    public void testGetById() throws IOException {
+    public void testGetById() {
         Fabric fabricForTest = new Fabric(_idToTest, _nameToTest, _materialToTest, _lengthToTest);
 
         ResponseEntity<Fabric> response = _restTemplate.postForEntity("/api/v1/fabrics", fabricForTest, Fabric.class);
@@ -104,12 +104,8 @@ public class FabricControllerWebIntegrationTest {
         assertEquals("updated name", responsePut.getBody().get_name());
     }
 
-    @Rule
-    public final ExpectedException exception = ExpectedException.none();
-
-
     @Test
-    public void testDeleteById() throws IOException {
+    public void testDeleteById() {
         Fabric fabricForTest = new Fabric(_idToTest, _nameToTest, _materialToTest, _lengthToTest);
         ResponseEntity<Fabric> response = _restTemplate.postForEntity("/api/v1/fabrics", fabricForTest, Fabric.class);
 
